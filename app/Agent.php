@@ -36,4 +36,7 @@ class Agent extends Authenticatable
     public function revenue(){
         return $this->hasOne(Revenue::class,'bcontract_id');
     }
+    public function property(){
+       $this->hasMany('App\Property');
+    }
 }

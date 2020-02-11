@@ -16,7 +16,7 @@ Route::view('/home', 'home')->middleware('auth');
 Route::group(['middleware' => 'auth:admin'], function () {
     Route::view('/admin', 'admin');
 });
-// agent route 
+// agent route
 Route::get('/admin/table_agent_list' ,'PageController@index');
 Route::get('/admin/register' ,'PageController@createAgent');
 Route::get('/admin/approve' ,'PageController@approve');
@@ -31,11 +31,9 @@ Route::get('/admin/report/yearly' ,'PageController@yearly');
 
     Route::get('/agent/dashboard','AgentController@index')->name('agent.dashboard');
 
-    Route::get('/agent/property/index','PropertyController@index')->name('property.index');
-    Route::get('/agent/property/add','PropertyConroller@add')->name('property.add');
-    Route::get('/agent/property/{pid}','PropertyConroller@detail')->name('property.detail');
-    
-    
+// Property_
+
+
     Route::get('/agent/property/{property_id}/buying-contract/add','BuyingContractController@add')->name('bcontract.add');
     Route::post('/agent/property/{property_id}/buying-contract/save','BuyingContractController@save')->name('bcontract.save');
 
@@ -49,6 +47,10 @@ Route::get('/admin/report/yearly' ,'PageController@yearly');
     Route::get('/agent/invoices','InvoiceController@index')->name('invoice.index');
     Route::post('/agent/invoices/data','InvoiceController@data')->name('invoice.data');
     Route::get('/agent/invoice/{invoice_id}','InvoiceController@detail')->name('invoice.detail');
+
+    Route::resource('/agent/property','PropertyController');
+;
+
 
 
 // });

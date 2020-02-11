@@ -66,11 +66,11 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Property Management</h6>
                         <a class="collapse-item" href="{{route('property.index')}}">My Property</a>
-                        <a class="collapse-item" href="{{route('property.add')}}">Add Property</a>
+                        <a class="collapse-item" href="{{route('property.create')}}">Add Property</a>
                     </div>
                 </div>
             </li>
-            
+
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
@@ -240,7 +240,7 @@
 <script src="{{asset('js/demo/chart-pie-demo.js')}}"></script>
 @section('script')
 
-@show 
+@show
 </body>
 
 </html>
